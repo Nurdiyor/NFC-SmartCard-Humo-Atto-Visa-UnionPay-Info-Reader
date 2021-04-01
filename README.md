@@ -27,3 +27,10 @@
                 android:resource="@xml/nfc_tech_filter" />
 	</activity>
 ##
+	<tech-list>
+		<tech>android.nfc.tech.IsoDep</tech>
+	</tech-list>
+	<tech-list>
+		<tech>android.nfc.tech.NfcF</tech>
+	</tech-list>
+##
