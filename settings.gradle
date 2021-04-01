@@ -1,0 +1,3 @@
+include ':humo_atto_visa_union_pay_nfc_info_reader'
+include ':app'
+rootProject.name = "NFCSmartCardInfoReader"
