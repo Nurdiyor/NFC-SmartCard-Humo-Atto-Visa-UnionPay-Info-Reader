@@ -6,11 +6,11 @@
 		}
 ## }
   
-##  dependencies {
+## dependencies {
 	        implementation 'com.github.Nurdiyor:NFC-SmartCard-Humo-Atto-Visa-UnionPay-Info-Reader:0.1.0'
 ## }
 
-##
+## AndroidManifest.xml
 	<activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
