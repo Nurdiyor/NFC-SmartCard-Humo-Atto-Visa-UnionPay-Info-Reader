@@ -1,5 +1,5 @@
 # NFC-SmartCard-Humo-Atto-Visa-UnionPay-Info-Reader
-### NFC Reader is an Android App based on NFCard. It can read contactless IC card use NFC hardware. Support ISO7816-4.It lib read data from cards like HUMO,ATTO,VISA AND UNION PAY 
+### NFC Reader is an Android App based on [NFCard](https://github.com/sinpolib/nfcard). It can read contactless IC card use NFC hardware. Support ISO7816-4.It lib read data from cards like HUMO,ATTO,VISA AND UNION PAY 
 ## allprojects {
 		repositories {
 			...
