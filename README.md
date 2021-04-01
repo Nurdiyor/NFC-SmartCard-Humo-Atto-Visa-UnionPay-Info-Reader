@@ -9,7 +9,7 @@
 ##  dependencies {
 	        implementation 'com.github.Nurdiyor:NFC-SmartCard-Humo-Atto-Visa-UnionPay-Info-Reader:0.1.0'
 ## }
-## Example:
+## Example:{
 package uz.micro.star.examplecardreader
 
 import android.content.Intent
@@ -95,3 +95,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+## }
