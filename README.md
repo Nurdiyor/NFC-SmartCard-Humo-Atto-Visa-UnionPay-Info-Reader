@@ -26,7 +26,7 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
 	</activity>
-##
+## android:resource="@xml/nfc_tech_filter"
 	<tech-list>
 		<tech>android.nfc.tech.IsoDep</tech>
 	</tech-list>
