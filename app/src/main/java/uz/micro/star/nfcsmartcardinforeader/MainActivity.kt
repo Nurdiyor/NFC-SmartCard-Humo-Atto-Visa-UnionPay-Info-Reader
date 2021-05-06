@@ -16,7 +16,7 @@ import uz.micro.star.nfcsmartcardinforeader.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
     private lateinit var binding: ActivityMainBinding
-    lateinit var mCardNfcManager: CardNfcManager
+    private lateinit var mCardNfcManager: CardNfcManager
     private var mSafeExit = false
 
     private var mCardNfcAsyncTask: CardNfcAsyncTask? = null
@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
         if (mNfcAdapter == null) {
             /* TextView noNfc = findViewById(android.R.id.candidatesArea);
             noNfc.setVisibility(View.VISIBLE);*/
-            // Shahil
         } else {
             mCardNfcUtils = CardNfcUtils(this)
             mIntentFromCreate = true
@@ -113,14 +112,10 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
     }
 
     override fun startNfcReadCard() {
-        Toast.makeText(this, "started", Toast.LENGTH_SHORT).show()
         mIsScanNow = true
     }
 
     override fun cardIsReadyToRead() {
-        Toast.makeText(this, "reading", Toast.LENGTH_SHORT).show()
-
-        // mCardReadyContent.setVisibility(View.VISIBLE);
         card = mCardNfcAsyncTask?.cardNumber
         card = getPrettyCardNumber(card!!)
         expiredDate = mCardNfcAsyncTask?.cardExpireDate
@@ -135,11 +130,7 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
         /*   mPutCardContent.setVisibility(View.GONE);
         mCardNumberText.setText(card + cardType);
         mExpireDateText.setText(expiredDate);*/
-        // Shahil
-        Log.e(
-            "Details",
-            "-->$card -->$cardType-->$expiredDate--> $cardCvv"
-        )
+        Toast.makeText(this, "Details: \n$card \n$cardType \n$expiredDate \n$cardCvv", Toast.LENGTH_SHORT).show()
         parseCardType(cardType!!)
     }
 
@@ -156,8 +147,6 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
     }
 
     override fun finishNfcReadCard() {
-        Log.d("ZZZ", "finished")
-        Toast.makeText(this, "finished", Toast.LENGTH_SHORT).show()
         mCardNfcAsyncTask = null
         mIsScanNow = false
     }
@@ -178,10 +167,10 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
                 ).show()
             }
             CardNfcAsyncTask.CARD_VISA -> {
-                //   mCardLogoIcon.setImageResource(R.mipmap.visa_logo); Shahil
+                //   mCardLogoIcon.setImageResource(R.mipmap.visa_logo);
             }
             CardNfcAsyncTask.CARD_MASTER_CARD -> {
-                //   mCardLogoIcon.setImageResource(R.mipmap.master_logo); Shahil
+                //   mCardLogoIcon.setImageResource(R.mipmap.master_logo);
             }
             CardNfcAsyncTask.CARD_HUMO -> {
                 Toast.makeText(this, "HUMO READING", Toast.LENGTH_SHORT).show()
