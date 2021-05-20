@@ -68,7 +68,6 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
         }
     }
 
-
     private fun buildResult(card: Card?) {
         if (card != null && !card.hasReadingException()) {
             if (card.isUnknownCard) {
