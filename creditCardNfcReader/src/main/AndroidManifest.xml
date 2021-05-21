@@ -2,8 +2,10 @@
     package="com.peerbits.nfccardreader">
 
     <uses-permission android:name="android.permission.NFC" />
-    <application
-        >
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+    <application>
         <meta-data
             android:name="android.nfc.action.TECH_DISCOVERED"
             android:resource="@xml/nfc_tech_filter" />
