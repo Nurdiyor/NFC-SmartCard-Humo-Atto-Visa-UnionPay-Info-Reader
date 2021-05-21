@@ -3,21 +3,21 @@
 ## -------------------------------------------
 package uz.micro.star.nfcsmartcardinforeader
 
-import android.content.Intent
-import android.nfc.NfcAdapter
-import android.os.Bundle
-import android.os.Handler
-import android.util.Log
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.peerbits.creditCardNfcReader.CardNfcAsyncTask
-import com.peerbits.creditCardNfcReader.utils.CardNfcUtils
-import uz.micro.star.humo_atto_visa_union_pay_nfc_info_reader.nfc.CardNfcManager
-import uz.micro.star.humo_atto_visa_union_pay_nfc_info_reader.nfc.SPEC
-import uz.micro.star.humo_atto_visa_union_pay_nfc_info_reader.nfc.bean.Card
-import uz.micro.star.nfcsmartcardinforeader.databinding.ActivityMainBinding
+    import android.content.Intent
+    import android.nfc.NfcAdapter
+    import android.os.Bundle
+    import android.os.Handler
+    import android.util.Log
+    import android.widget.Toast
+    import androidx.appcompat.app.AppCompatActivity
+    import com.peerbits.creditCardNfcReader.CardNfcAsyncTask
+    import com.peerbits.creditCardNfcReader.utils.CardNfcUtils
+    import uz.micro.star.humo_atto_visa_union_pay_nfc_info_reader.nfc.CardNfcManager
+    import uz.micro.star.humo_atto_visa_union_pay_nfc_info_reader.nfc.SPEC
+    import uz.micro.star.humo_atto_visa_union_pay_nfc_info_reader.nfc.bean.Card
+    import uz.micro.star.nfcsmartcardinforeader.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
+    class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mCardNfcManager: CardNfcManager
     private var mSafeExit = false
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
         } else {
             mCardNfcUtils = CardNfcUtils(this)
             mIntentFromCreate = true
-//            onNewIntent(intent)
+	//onNewIntent(intent)
         }
         mCardNfcManager =
             CardNfcManager(
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
     private fun buildResult(card: Card?) {
         if (card != null && !card.hasReadingException()) {
             if (card.isUnknownCard) {
-//    ret.putExtra(RET, NfcReaderApplication.getStringResource(R.string.info_nfc_unknown));
+	//ret.putExtra(RET, NfcReaderApplication.getStringResource(R.string.info_nfc_unknown));
             } else {
                 binding.nfcInfo.text =
                     card.serialAndDate.cardNumber + "\n" + card.serialAndDate.cardExpiredDate
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
                 Log.d("SERIAL", "buildResult: " + binding.nfcInfo.text.toString())
             }
         } else {
-//            ret.putExtra(RET,NfcReaderApplication.getStringResource(R.string.info_nfc_error));
+	//ret.putExtra(RET,NfcReaderApplication.getStringResource(R.string.info_nfc_error));
         }
     }
 
@@ -122,8 +122,8 @@ class MainActivity : AppCompatActivity(), CardNfcAsyncTask.CardNfcInterface {
         card = getPrettyCardNumber(card!!)
         expiredDate = mCardNfcAsyncTask?.cardExpireDate
         cardType = mCardNfcAsyncTask?.cardType
-//        val cardHolderFirstName: String = mCardNfcAsyncTask?.cardFirstName!!
-//        val cardHolderLastName: String = mCardNfcAsyncTask?.cardFirstName!!
+	// val cardHolderFirstName: String = mCardNfcAsyncTask?.cardFirstName!!
+	//val cardHolderLastName: String = mCardNfcAsyncTask?.cardFirstName!!
         val cardCvv: Int = mCardNfcAsyncTask?.cardCvv!!
         binding.nfcInfo.text =
             card + "\n" + expiredDate + "\n" + cardType
