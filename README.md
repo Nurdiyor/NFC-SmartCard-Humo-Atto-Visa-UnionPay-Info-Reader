@@ -191,7 +191,7 @@ package uz.micro.star.nfcsmartcardinforeader
 ## }
   
 ## dependencies {
-	        implementation 'com.github.Nurdiyor:NFC-SmartCard-Humo-Atto-Visa-UnionPay-Info-Reader:0.1.1'
+	        implementation 'com.github.Nurdiyor:NFC-SmartCard-Humo-Atto-Visa-UnionPay-Info-Reader:0.1.0'
 ## }
 
 ## AndroidManifest.xml
